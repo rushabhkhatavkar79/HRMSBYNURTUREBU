@@ -1,0 +1,28 @@
+const express = require("express");
+var mongoose = require("mongoose");
+var personalinfoapi = require('./RestApis/PeronalInformation');
+var employeeapi = require('./RestApis/Employee');
+var contactapi = require('./RestApis/ContactInformation');
+var projectapi = require('./RestApis/ProjectInformation');
+
+const app = express();
+app.use(express.json());
+const port = 3000;
+
+mongoose.connect("mongodb://localhost/hrms", {
+    useNewUrlParser: true, useUnifiedTopology: true
+});
+
+var db = mongoose.connection;
+db.on("error", console.error.bind(console, "connection error:"));
+db.once("open", function () {
+    // we're connected!
+    console.log(" we're connected!");
+});
+
+app.use("/employee", employeeapi);
+app.use("/personalinformation", personalinfoapi);
+app.use("/contactinformation", contactapi);
+app.use("/projectinformation", projectapi);
+
+app.listen(port, () => console.log(`App listening on port ${port}!`));
