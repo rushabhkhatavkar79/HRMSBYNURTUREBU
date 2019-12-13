@@ -9,7 +9,7 @@ var skillinfoapi = require('./RestApis/SkillInformation');
 
 const app = express();
 app.use(express.json());
-const port = 3001;
+const port = 3003;
 
 mongoose.connect("mongodb://localhost/hrms", {
   useNewUrlParser: true,useUnifiedTopology: true
