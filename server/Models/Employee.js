@@ -14,6 +14,14 @@ const EmployeeSchema = new mongoose.Schema({
     projectinfo: {
         type: mongoose.Schema.Types.ObjectId,
         ref: 'ProjectInformation'
+    },
+    leaveinfo: {
+        type: mongoose.Schema.Types.ObjectId,
+        ref: 'LeaveInformation'
+    },
+    skillinfo:{
+        type: mongoose.Schema.Types.ObjectId,
+        ref: 'SkillInformation'
     }
 });
 
