@@ -33,7 +33,10 @@ const getMyEmployeeByLogin = (employeeid, password) => {
             body: JSON.stringify({ employeeid, password })
         })
             .then(response => response.json())
-            .then(id => dispatch({ type: GET_EMPLOYEE_LOGIN, id }));
+            .then(id => dispatch({ type: GET_EMPLOYEE_LOGIN, id }))
+            .catch((err) => {
+                console.log(err)
+            });
     };
 };
 
