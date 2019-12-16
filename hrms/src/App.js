@@ -6,6 +6,7 @@ import { BrowserRouter as Router, Switch, Route, Link, Redirect } from "react-ro
 import Login from './containers/Login'
 import Home from './components/Home'
 import './App.css';
+import MyLeave from './components/Apply-Leave';
 
 function App() {
   return (
@@ -15,7 +16,8 @@ function App() {
           <Redirect from="/" to="/login" />
           <Switch>
             <Route path="/login" exact component={Login} />
-            <Route path="/home" exact component={Home} />
+            <Route path="/home"><Home/></Route>
+            <Route path="/leaveinformation"><MyLeave/></Route>
           </Switch>
         </Router>
       </div>

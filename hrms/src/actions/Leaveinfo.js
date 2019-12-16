@@ -2,7 +2,7 @@ import {
     GET_LEAVEINFO_BY_ID,
     CREATE_LEAVEINFO,
     UPDATE_LEAVEINFO,
-    DELETE_LEAVEINFO,
+    DELETE_LEAVEINFO
 } from './actions'
 
 // const getAllLeaveInfos = id => {
@@ -21,14 +21,14 @@ const getLeaveInfoById = id => {
     };
 };
 
-const createLeaveInfo = employeeId=> {
+const createLeaveInfo = (employeeId,leaveType,fromDate,toDate,comments)=> {
     return dispatch => {
         fetch(`/leaveinformation/${employeeId}`, {
             method: "POST",
             headers: {
                 "Content-Type": "application/json"
             },
-            body: JSON.stringify({ employeeId,leaveType,fromDate,toDate,comments})
+            body: JSON.stringify({ leaveType,fromDate,toDate,comments})
         })
             .then(response => response.json())
             .then(newLeaveInfo => {
@@ -51,14 +51,14 @@ const deleteLeaveInfo = id => {
     };
 };
 
-const updateLeaveInfo = id => {
+const updateLeaveInfo = (leaveId,employeeId, LeaveInfoId,leaveType,fromDate,toDate,comments) => {
     return dispatch => {
-        fetch(`/leaveinformation/${id}`, {
+        fetch(`/leaveinformation`, {
             method: "PUT",
             headers: {
                 "Content-Type": "application/json"
             },
-            body: JSON.stringify({ employeeId, LeaveInfoId,leaveType,fromDate,toDate,comments})
+            body: JSON.stringify({leaveId,employeeId, LeaveInfoId,leaveType,fromDate,toDate,comments})
         })
             .then(response => response.json())
             .then(updatedInfo => {
