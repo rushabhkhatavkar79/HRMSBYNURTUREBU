@@ -46,12 +46,13 @@ router.post("/login", function (req, res) {
         return;
     }
 
-    EmployeeModel.findOne({ employeeid: employeeid }, '_id', { password: password }, function (err, id) {
+    EmployeeModel.findOne({ employeeid: employeeid, password: password }, function (err, id) {
         if (err) {
             res.send(err)
         }
         else {
             res.send(id)
+
         }
     });
 

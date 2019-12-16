@@ -2,7 +2,8 @@ import React, { useState, useEffect } from 'react';
 import { useHistory } from 'react-router-dom';
 import { Paper, Grid, TextField, Button, FormControlLabel, Checkbox, Typography, Box, Link } from '@material-ui/core';
 import { Face, Fingerprint, Person, Lock } from '@material-ui/icons'
-import { makeStyles } from '@material-ui/core/styles'
+import { makeStyles } from '@material-ui/core/styles';
+import { Link as rLink } from 'react-router-dom'
 
 const useStyles = makeStyles(theme => ({
     margin: {
@@ -24,10 +25,12 @@ function Login(props) {
 
     const [employeeid, setemployeeid] = useState();
     const [password, setpassword] = useState();
+    // const [fields, setfields] = useState(false)
 
     useEffect(() => {
         props.getMyEmployeeByLogin(employeeid, password);
-    }, [employeeid, password])
+
+    })
 
 
     const handleChangeid = (employeeid) => {
@@ -39,9 +42,13 @@ function Login(props) {
     }
 
     const handleLogin = (e) => {
+
+
         if (props.Employees._id) {
             history.push(`/home`)
         }
+
+
     }
 
     return (
@@ -84,10 +91,12 @@ function Login(props) {
                     </Grid>
                 </Grid>
                 <Grid container justify="center" style={{ marginTop: '10px' }}>
+
                     <Button variant="outlined" color="primary"
                         style={{ textTransform: "none" }}
                         onClick={(e) => { handleLogin(e) }}
                     >Login</Button>
+
                 </Grid>
             </div>
         </Paper >
