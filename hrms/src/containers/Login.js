@@ -11,11 +11,8 @@ const mapStateToProps = (state /*, ownProps*/) => {
 };
 
 const mapDispatchToProps = {
-    getAllEmployees: employeeActions.getAllEmployees,
-    getMyEmployeeById: employeeActions.getMyEmployeeById,
     getMyEmployeeByLogin: employeeActions.getMyEmployeeByLogin,
     createMyEmployee: employeeActions.createMyEmployee,
-    deleteMyEmployee: employeeActions.deleteMyEmployee,
     updateMyEmployee: employeeActions.updateMyEmployee,
 };
 

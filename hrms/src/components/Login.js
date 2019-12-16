@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import { useHistory } from 'react-router-dom';
 import { Paper, Grid, TextField, Button, FormControlLabel, Checkbox, Typography, Box, Link } from '@material-ui/core';
 import { Face, Fingerprint, Person, Lock } from '@material-ui/icons'
 import { makeStyles } from '@material-ui/core/styles'
@@ -19,9 +20,18 @@ function Login(props) {
     const classes = useStyles();
     const preventDefault = event => event.preventDefault();
 
+    let history = useHistory();
+
     const [employeeid, setemployeeid] = useState();
     const [password, setpassword] = useState();
-    const [empdbId, setempdbId] = useState(0);
+    // const [empdbId, setempdbId] = useState(0);
+
+    useEffect(() => {
+        if (!props.Employees) {
+            props.getMyEmployeeByLogin(employeeid, password);
+        }
+    })
+
 
     const handleChangeid = (employeeid) => {
         setemployeeid(employeeid)
@@ -32,13 +42,9 @@ function Login(props) {
     }
 
     const handleLogin = (e) => {
-        console.log(props.Employees)
-        if (!props.Employees) {
-            props.getMyEmployeeByLogin(employeeid, password);
-
+        if (props.Employees) {
+            history.push(`/home`)
         }
-        setempdbId(props.id);
-        console.log(empdbId);
     }
 
     return (
