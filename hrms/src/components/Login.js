@@ -24,13 +24,10 @@ function Login(props) {
 
     const [employeeid, setemployeeid] = useState();
     const [password, setpassword] = useState();
-    // const [empdbId, setempdbId] = useState(0);
 
     useEffect(() => {
-        if (!props.Employees) {
-            props.getMyEmployeeByLogin(employeeid, password);
-        }
-    })
+        props.getMyEmployeeByLogin(employeeid, password);
+    }, [employeeid, password])
 
 
     const handleChangeid = (employeeid) => {
@@ -42,7 +39,7 @@ function Login(props) {
     }
 
     const handleLogin = (e) => {
-        if (props.Employees) {
+        if (props.Employees._id) {
             history.push(`/home`)
         }
     }
