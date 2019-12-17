@@ -6,12 +6,11 @@ import Tabs from '@material-ui/core/Tabs';
 import Tab from '@material-ui/core/Tab';
 import Typography from '@material-ui/core/Typography';
 import Box from '@material-ui/core/Box';
-
-
+import MyLeave from './Apply-Leave';
+import {Link} from "react-router-dom";
 
 function TabPanel(props) {
     const { children, value, index, ...other } = props;
-
     return (
         <Typography
             component="div"
@@ -58,26 +57,15 @@ export default function TabBar() {
         <div className={classes.root}>
             <AppBar position="static">
                 <Tabs value={value} onChange={handleChange} aria-label="simple tabs example">
-                    <Tab label="Home" {...a11yProps(0)} />
-                    <Tab label="Leave" {...a11yProps(1)} />
+                    <Link to="/home"><Tab label="Home" {...a11yProps(0)} /></Link>
+                    <Link to="/leaveinformation"><Tab label="Leave" {...a11yProps(1)}/></Link>
                     <Tab label="MyInfo" {...a11yProps(2)} />
                     <Tab label="Directory" {...a11yProps(3)} />
 
 
                 </Tabs>
             </AppBar>
-            <TabPanel value={value} index={0}>
-                Home
-            </TabPanel>
-            <TabPanel value={value} index={1}>
-                Leave
-            </TabPanel>
-            <TabPanel value={value} index={2}>
-                MyInfo
-            </TabPanel>
-            <TabPanel value={value} index={3}>
-                Directory
-            </TabPanel>
+            
         </div>
     );
 }
