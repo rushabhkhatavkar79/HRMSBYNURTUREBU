@@ -74,7 +74,8 @@ router.put("/:id", function (req, res) {
     var gender = req.body.gender;
     var dob = req.body.dob;
 
-    if (!piId || !fullname || !gender || !dob) {
+    if (!piId || !(fullname || gender || dob)) {
+        console.log(piId, fullname, gender, dob)
         res.send({
             status: "error",
             msg: "Missing body parameter : piId, fullname, gender, dob"
