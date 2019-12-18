@@ -5,7 +5,8 @@ import leaveActions from "../actions/Leaveinfo";
 const mapStateToProps = (state /*, ownProps*/) => {
     // console.log(state);
     return {
-        Leaves: state.Leaves.all
+        Leaves: state.Leaves.all,
+        Employees: state.Employees.all
     };
 };
 

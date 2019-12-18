@@ -21,19 +21,19 @@ const getLeaveInfoById = id => {
     };
 };
 
-const createLeaveInfo = (employeeId,leaveType,fromDate,toDate,comments)=> {
+const createLeaveInfo = (employeeId, leaveType, fromDate, toDate, comments) => {
     return dispatch => {
         fetch(`/leaveinformation/${employeeId}`, {
             method: "POST",
             headers: {
                 "Content-Type": "application/json"
             },
-            body: JSON.stringify({ leaveType,fromDate,toDate,comments})
+            body: JSON.stringify({ leaveType, fromDate, toDate, comments })
         })
             .then(response => response.json())
-            .then(newLeaveInfo => {
-                console.log(newLeaveInfo);
-                dispatch({ type: CREATE_LEAVEINFO, newLeaveInfo });
+            .then(newleaveInfo => {
+                console.log(newleaveInfo);
+                dispatch({ type: CREATE_LEAVEINFO, newleaveInfo });
             });
     };
 };
@@ -51,14 +51,14 @@ const deleteLeaveInfo = id => {
     };
 };
 
-const updateLeaveInfo = (leaveId,employeeId, LeaveInfoId,leaveType,fromDate,toDate,comments) => {
+const updateLeaveInfo = (leaveId, employeeId, LeaveInfoId, leaveType, fromDate, toDate, comments) => {
     return dispatch => {
         fetch(`/leaveinformation`, {
             method: "PUT",
             headers: {
                 "Content-Type": "application/json"
             },
-            body: JSON.stringify({leaveId,employeeId, LeaveInfoId,leaveType,fromDate,toDate,comments})
+            body: JSON.stringify({ leaveId, employeeId, LeaveInfoId, leaveType, fromDate, toDate, comments })
         })
             .then(response => response.json())
             .then(updatedInfo => {

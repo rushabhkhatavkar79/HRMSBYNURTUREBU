@@ -16,7 +16,7 @@ const leaveInfoReducer = (state = initialState, action) => {
     switch (action.type) {
         case GET_LEAVEINFO_BY_ID:
             newState = _.cloneDeep(state);
-            newState.all = action.leaveinfo;
+            newState.all = action.leaveInfo;
             return newState;
         case CREATE_LEAVEINFO:
             newState = _.cloneDeep(state);
@@ -30,10 +30,10 @@ const leaveInfoReducer = (state = initialState, action) => {
             newState = _.cloneDeep(state);
             let toBeUpdated = _.find(newState.all, { _id: action.leaveinfoId });
             if (toBeUpdated) {
-                toBeUpdated.leaveType=action.leaveType;
-                toBeUpdated.fromDate=action.fromDate;
-                toBeUpdated.toDate=action.toDate;
-                toBeUpdated.comments=action.comments;
+                toBeUpdated.leaveType = action.leaveType;
+                toBeUpdated.fromDate = action.fromDate;
+                toBeUpdated.toDate = action.toDate;
+                toBeUpdated.comments = action.comments;
             }
             return newState;
 
