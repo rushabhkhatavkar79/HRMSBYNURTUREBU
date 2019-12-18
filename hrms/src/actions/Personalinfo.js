@@ -51,14 +51,14 @@ const deletePersonalInfo = id => {
     };
 };
 */
-const updatePersonalInfo = (employeeId, PersonalInfoId) => {
+const updatePersonalInfo = (id, piId, fullname = null, gender = null, dob = null) => {
     return dispatch => {
-        fetch(`/personalinformation/`, {
+        fetch(`/personalinformation/${id}`, {
             method: "PUT",
             headers: {
                 "Content-Type": "application/json"
             },
-            body: JSON.stringify({ employeeId, PersonalInfoId })
+            body: JSON.stringify({ piId, fullname, gender, dob })
         })
             .then(response => response.json())
             .then(updatedInfo => {
