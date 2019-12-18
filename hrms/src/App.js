@@ -7,6 +7,7 @@ import Login from './containers/Login'
 import Home from './components/Home'
 import './App.css';
 import MyLeave from './components/Apply-Leave';
+import MyInfo from './components/MyInfo';
 
 function App() {
   return (
@@ -16,8 +17,9 @@ function App() {
           <Redirect from="/" to="/login" />
           <Switch>
             <Route path="/login" exact component={Login} />
-            <Route path="/home"><Home/></Route>
-            <Route path="/leaveinformation"><MyLeave/></Route>
+            <Route path="/home"><Home /></Route>
+            <Route path="/leaveinformation"><MyLeave /></Route>
+            <Route path="/myinformation" component={MyInfo} />
           </Switch>
         </Router>
       </div>

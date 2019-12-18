@@ -20,7 +20,7 @@ const getPersonalInfoById = id => {
             .then(personalInfo => dispatch({ type: GET_PERSONALINFO_BY_ID, personalInfo }));
     };
 };
-*/
+
 const createPersonalInfo = employeeId => {
     return dispatch => {
         fetch(`/personalinformation/${id}`, {
@@ -50,10 +50,10 @@ const deletePersonalInfo = id => {
             });
     };
 };
-
-const updatePersonalInfo = id => {
+*/
+const updatePersonalInfo = (employeeId, PersonalInfoId) => {
     return dispatch => {
-        fetch(`/personalinformation/${id}`, {
+        fetch(`/personalinformation/`, {
             method: "PUT",
             headers: {
                 "Content-Type": "application/json"
@@ -70,8 +70,8 @@ const updatePersonalInfo = id => {
 
 export default {
     getAllPersonalInfos,
-    //getPersonalInfoById,
-    createPersonalInfo,
-    deletePersonalInfo,
+    // getPersonalInfoById,
+    // createPersonalInfo,
+    // deletePersonalInfo,
     updatePersonalInfo
 };
