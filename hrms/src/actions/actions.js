@@ -46,3 +46,8 @@ export const GET_SKILLINFO_BY_ID = "GET_SKILLINFO_BY_ID"
 export const CREATE_SKILLINFO = "CREATE_SKILLINFO";
 export const UPDATE_SKILLINFO = "UPDATE_SKILLINFO";
 export const DELETE_SKILLINFO = "DELETE_SKILLINFO";
+
+/**
+ * Directory
+ */
+export const GET_DIRECTORY = "GET_DIRECTORY";
