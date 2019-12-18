@@ -1,5 +1,5 @@
 import { connect } from "react-redux";
-import MyLeave from "../components/Apply-Leave";
+import MyLeave from "../components/MyLeave";
 import leaveActions from "../actions/Leaveinfo";
 
 const mapStateToProps = (state /*, ownProps*/) => {

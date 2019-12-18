@@ -1,13 +1,13 @@
 import React, { useEffect } from 'react';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import {
-  Container, 
-  Row, 
+  Container,
+  Row,
   Col,
   Form,
   Button,
 } from 'react-bootstrap'
-import {AppBar,Toolbar,IconButton,Typography} from '@material-ui/core';
+import { AppBar, Toolbar, IconButton, Typography } from '@material-ui/core';
 import { makeStyles } from '@material-ui/core/styles';
 import MenuIcon from '@material-ui/icons/Menu';
 import './Apply-Leave.css';
@@ -15,48 +15,48 @@ import TextField from '@material-ui/core/TextField';
 import Header from "./Header"
 
 const useStyles = makeStyles(theme => ({
-    textField: {
-      marginLeft: theme.spacing(1),
-      marginRight: theme.spacing(1),
-      width: 200,
-    },
-  })); 
-   
-function MyLeave(props) {
-    const classes = useStyles();
-    useEffect(()=>{
-      if(!props.Leaves){
-        console.log("herr");
-      }
-    })
-    console.log(props);
-    const handleSubmit = event => {
-      const form = event.currentTarget;
-      if (form.checkValidity() === false) {
-        event.preventDefault();
-        event.stopPropagation();
-      }
-    };
+  textField: {
+    marginLeft: theme.spacing(1),
+    marginRight: theme.spacing(1),
+    width: 200,
+  },
+}));
 
-    return(
-        <div className="leavePage">
-          <Header/>
-          <br/><br/>
-        <Container>   
-            <Row>
-              <Col>
-                <div className="leavePage-content">
-                <div className="leavePage-title">
-                  Apply Leave
+function MyLeave(props) {
+  const classes = useStyles();
+  useEffect(() => {
+    if (!props.Leaves) {
+      console.log("herr");
+    }
+  })
+  console.log(props);
+  const handleSubmit = event => {
+    const form = event.currentTarget;
+    if (form.checkValidity() === false) {
+      event.preventDefault();
+      event.stopPropagation();
+    }
+  };
+
+  return (
+    <div className="leavePage">
+      <Header />
+      <br /><br />
+      <Container>
+        <Row>
+          <Col>
+            <div className="leavePage-content">
+              <div className="leavePage-title">
+                Apply Leave
                 </div>
-                <div>
-                  <Form onSubmit={handleSubmit}>
-                    <Form.Group as={Row} controlId="formPlaintextType">
-                      <Form.Label column sm="2">
-                        Leave Type *
+              <div>
+                <Form onSubmit={handleSubmit}>
+                  <Form.Group as={Row} controlId="formPlaintextType">
+                    <Form.Label column sm="2">
+                      Leave Type *
                       </Form.Label>
-                      <Col sm="10">
-                        <Form.Group as={Col} controlId="formGridState">
+                    <Col sm="10">
+                      <Form.Group as={Col} controlId="formGridState">
                         {/* <Form.Label>State</Form.Label> */}
                         <Form.Control as="select">
                           <option>--Select--</option>
@@ -65,18 +65,18 @@ function MyLeave(props) {
                           <option>2019 Optional (19Apr/5Jun/12Aug/25Oct/29Oct)</option>
                         </Form.Control>
                       </Form.Group>
-                      </Col>
-                    </Form.Group>
+                    </Col>
+                  </Form.Group>
 
-                    <Form.Group as={Row} controlId="formPlaintextLeaveBalance">
-                      <Form.Label column sm="2">
-                        Leave Balance
+                  <Form.Group as={Row} controlId="formPlaintextLeaveBalance">
+                    <Form.Label column sm="2">
+                      Leave Balance
                       </Form.Label>
-                      <Col sm="10">
-                        <span>0.00</span>
-                      </Col>
-                    </Form.Group>
-                  
+                    <Col sm="10">
+                      <span>0.00</span>
+                    </Col>
+                  </Form.Group>
+
 
                   <Form.Group as={Row} controlId="formFromDate">
                     <Form.Label column sm="2">
@@ -123,13 +123,13 @@ function MyLeave(props) {
 
                   <Button type="submit">Apply</Button>
 
-                  </Form>
+                </Form>
 
-                </div>
-                </div>
-              </Col>
-            </Row>
-{/* 
+              </div>
+            </div>
+          </Col>
+        </Row>
+        {/* 
             <AppBar position="static">
             <Toolbar>
                 <IconButton edge="start" className={classes.menuButton} color="inherit" aria-label="menu">
@@ -141,8 +141,8 @@ function MyLeave(props) {
                 
             </Toolbar>
             </AppBar> */}
-            </Container>
-            </div>
-    );
+      </Container>
+    </div>
+  );
 }
 export default MyLeave;
