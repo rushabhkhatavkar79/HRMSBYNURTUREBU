@@ -1,18 +1,37 @@
+import React, { useEffect } from 'react';
 import TabBar from './TabBar';
 import Header from './Header';
 
 function Directory(props) {
-    // useEffect(() => {
-    //     props.getMyEmployee(employeeid, password);
+    var directory;
+    useEffect(() => {
+        if (!props.Directory) {
+            props.getDirectory();
+            // console.log("in if");
+        }
 
-    // })
+        else {
+            console.log(props.Directory);
+
+
+        }
+    })
+    // console.log("out if");
+
+    if (props.Directory) {
+        directory = props.Directory.map(di => (
+            <p>
+                {/* key={di._id} */}
+                {/* _id={di._id} */}
+                employeeid={di.employeeid}
+            </p>
+        ));
+    }
 
     return (
         <div>
-            <div><Header /></div>
-            <div><TabBar /></div>
             <div>
-                <p>{props._id}</p>
+                {directory}
             </div>
         </div>
     )

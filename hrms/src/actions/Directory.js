@@ -10,4 +10,4 @@ const getDirectory = () => {
     };
 };
 
-export default getDirectory;
+export default { getDirectory };

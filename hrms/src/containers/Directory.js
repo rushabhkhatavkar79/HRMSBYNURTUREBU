@@ -13,4 +13,6 @@ const mapDispatchToProps = {
     getDirectory: directoryActions.getDirectory,
 };
 
+console.log(mapDispatchToProps)
+
 export default connect(mapStateToProps, mapDispatchToProps)(Directory);

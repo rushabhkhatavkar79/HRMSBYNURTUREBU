@@ -7,6 +7,7 @@ import Login from './containers/Login'
 import Home from './components/Home'
 import './App.css';
 import MyLeave from './components/Apply-Leave';
+import Directory from './containers/Directory';
 import MyInfo from './components/MyInfo';
 
 function App() {
@@ -19,7 +20,10 @@ function App() {
             <Route path="/login" exact component={Login} />
             <Route path="/home"><Home /></Route>
             <Route path="/leaveinformation"><MyLeave /></Route>
+            <Route path="/viewdirectory" component={Directory} />
+
             <Route path="/myinformation" component={MyInfo} />
+
           </Switch>
         </Router>
       </div>
