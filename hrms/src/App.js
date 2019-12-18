@@ -6,7 +6,7 @@ import { BrowserRouter as Router, Switch, Route, Link, Redirect } from "react-ro
 import Login from './containers/Login'
 import Home from './components/Home'
 import './App.css';
-import MyLeave from './components/Apply-Leave';
+import MyLeave from './containers/Leave';
 import Directory from './containers/Directory';
 import MyInfo from './components/MyInfo';
 
