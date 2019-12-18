@@ -50,8 +50,8 @@ export default function SimpleTable() {
     const classes = useStyles();
 
     return (
-        <fieldset className={classes.root}>
-            <legend>My Leave Balance</legend>
+        <fieldset className={classes.root} style={{ border: "2px solid", height: '306px' }}>
+            <legend style={{ width: "70%", marginLeft: 24, fontSize: "1rem" }}>My Leave Balance</legend>
             <Paper >
                 <Table className={classes.table} aria-label="simple table">
                     <TableHead>
