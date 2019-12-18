@@ -7,14 +7,14 @@ var ProjectInformationModel = require('../Models/Projectinfo');
 var SkillInformationModel = require('../Models/Skillinfo');
 
 router.get("/", function (req, res) {
-    EmployeeModel.find().exec(function (err, employees) {
+    EmployeeModel.find().populate('personalinfo contactinfo projectinfo').exec(function (err, employees) {
         if (err) {
             res.send(err);
         } else {
             res.send(employees);
+
         }
     });
 });
-
 
 module.exports = router;
