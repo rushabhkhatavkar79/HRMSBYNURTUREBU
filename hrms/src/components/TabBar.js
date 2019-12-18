@@ -61,7 +61,7 @@ export default function TabBar() {
                     <Link to="/leaveinformation"><Tab label="Leave" {...a11yProps(1)} /></Link>
                     <Link to="/myinformation"><Tab label="MyInfo" {...a11yProps(2)} /></Link>
                     <Link to="/viewdirectory"><Tab label="Directory" {...a11yProps(3)} /></Link>
-                    <a href="https://drive.google.com/drive/folders/0B_vE39dgPgKsVW9MYjhrSWdxdlU" style={{ paddingLeft: 50, paddingTop: 14, fontSize: 14 }}>HR Policies & Forms</a>
+                    <a href={"https://drive.google.com/drive/folders/0B_vE39dgPgKsVW9MYjhrSWdxdlU"} target="_blank" style={{ paddingLeft: 50, paddingTop: 14, fontSize: 14 }}>HR Policies & Forms</a>
 
                 </Tabs>
             </AppBar>
