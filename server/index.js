@@ -6,6 +6,7 @@ var employeeapi = require('./RestApis/Employee');
 var contactapi = require('./RestApis/ContactInformation');
 var projectapi = require('./RestApis/ProjectInformation');
 var skillinfoapi = require('./RestApis/SkillInformation');
+var viewdirectoryapi = require('./RestApis/ViewDirectory');
 
 const app = express();
 app.use(express.json());
@@ -28,5 +29,6 @@ app.use("/contactinformation", contactapi);
 app.use("/leaveinformation", leaveinfoapi);
 app.use("/skillinformation", skillinfoapi);
 app.use("/projectinformation", projectapi);
+app.use("/viewdirectory", viewdirectoryapi);
 
 app.listen(port, () => console.log(`Example app listening on port ${port}!`));
