@@ -15,11 +15,11 @@ const EmployeeSchema = new mongoose.Schema({
         type: mongoose.Schema.Types.ObjectId,
         ref: 'ProjectInformation'
     },
-    leaveinfo: {
+    leaveinfo: [{
         type: mongoose.Schema.Types.ObjectId,
         ref: 'LeaveInformation'
-    },
-    skillinfo:{
+    }],
+    skillinfo: {
         type: mongoose.Schema.Types.ObjectId,
         ref: 'SkillInformation'
     }
