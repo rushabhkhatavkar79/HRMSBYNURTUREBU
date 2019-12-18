@@ -59,11 +59,10 @@ export default function TabBar() {
                 <Tabs value={value} onChange={handleChange} aria-label="simple tabs example">
                     <Link to="/home"><Tab label="Home" {...a11yProps(0)} /></Link>
                     <Link to="/leaveinformation"><Tab label="Leave" {...a11yProps(1)} /></Link>
-                    <Tab label="MyInfo" {...a11yProps(2)} />
-                    {/* <Tab label="Directory" {...a11yProps(3)} /> */}
+                    <Link to="/myinformation"><Tab label="MyInfo" {...a11yProps(2)} /></Link>
                     <Link to="/viewdirectory"><Tab label="Directory" {...a11yProps(3)} /></Link>
-                    {/* <Link to="https://drive.google.com/drive/folders/0B_vE39dgPgKsVW9MYjhrSWdxdlU"><Tab label="HR Policies & Forms"></Tab></Link> */}
-                    <a href="https://drive.google.com/drive/folders/0B_vE39dgPgKsVW9MYjhrSWdxdlU" style={{ paddingLeft: 50, paddingTop: 14, fontSize: 14 }}>HR Policies & Forms</a>
+                    <a href={"https://drive.google.com/drive/folders/0B_vE39dgPgKsVW9MYjhrSWdxdlU"} target="_blank" style={{ paddingLeft: 50, paddingTop: 14, fontSize: 14 }}>HR Policies & Forms</a>
+
                 </Tabs>
             </AppBar>
 

@@ -16,16 +16,16 @@ const personalInfoReducer = (state = initialState, action) => {
     switch (action.type) {
         case GET_ALL_PERSONALINFO:
             newState = _.cloneDeep(state);
-            newState.all = action.json;
+            newState.all = action.allPersonalInfos;
             return newState;
-        case CREATE_PERSONALINFO:
+        /*case CREATE_PERSONALINFO:
             newState = _.cloneDeep(state);
             newState.all.push(action.newEmployee);
             return newState;
         case DELETE_PERSONALINFO:
             newState = _.cloneDeep(state);
             _.remove(newState.all, { _id: action.removedEmployee._id });
-            return newState;
+            return newState;*/
         case UPDATE_PERSONALINFO:
             newState = _.cloneDeep(state);
             let toBeUpdated = _.find(newState.all, { _id: action.personalInfoId });
